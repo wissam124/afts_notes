@@ -2,40 +2,49 @@
 #+AUTHOR: Jean Dupin
 
 * Buy and hold, single contract
-
-To earn positive returns we need to take a risk that most people are unwilling or unable to take.
-Examples:
-- equity market risk (known in financial markets as beta)
-
-Buying the S&P 500 future is a way to get exposure to - and be rewarded for - equity market risk.
++ To earn positive returns we need to take a risk that most people are unwilling or unable to take.
+  Examples:
+  - equity market risk (known in financial markets as beta)
+    - Buying the S&P 500 future is a way to get exposure to - and be rewarded for - equity market risk.
 
 * Multipliers, tick size and tick value
++ Contract unit
+  The contract unit defines the relationship between the price and value of different futures contracts.
+  e.g. the *e-mini* future has a contract unit of $50 i.e. buying an e-mini contract when the S&P 500
+  level is 4,500 means we have an exposure of 4,500 x 50 = $225,500
 
-The contract unit defines the relationship between the price and value of different futures contracts.
-e.g. the *e-mini* future has a contract unit of $50 i.e. buying an e-mini contract when the S&P 500
-level is 4,500 means we have an exposure of 4,500 x 50 = $225,500
-
-Notional Exposure per contract ($) = Multiplier ($) x Price
-
-Notional Exposure per contract (Base currency) = Multiplier x Price x FX rate
++ Notional Exposure per contract ($) = Multiplier ($) x Price
++ Notional Exposure per contract (Base currency) = Multiplier x Price x FX rate
 
 * Future expiries and rolling
 
 ** Trading costs
-Costs categorised into:
-- commissions (fixed per contract)
-- spread costs
-
- The spread cost is the value you are giving up to the market when you buy or sell.
- Def: difference between the price you pay (or receive) and the mid-price you'd pay or receive in the
- absence of any spread between bid and offer prices.
++ Costs categorised into:
+  - commissions (fixed per contract)
+  - spread costs
++ The spread cost is the value you are giving up to the market when you buy or sell.
++ The spread cost is the difference between the price you pay (or receive) and the mid-price you'd pay or receive in the
+  absence of any spread between bid and offer prices.
 
 ** Back-adjusting futures prices
-
 Back-adjustment seeks to create a price series that reflects the true profit and
 loss from *constantly holding and rolling a single futures contract, but which ignores any trading costs*.
 
 ** Measuring profits from a trading strategy
+Given a series of positions in contracts $(N_t)_t$ and a series of back-adjusted prices $(P_t)_t$
 
 The return /in price points/ for time period t is
 $R^{points}_t = N_{t-1}.(P_t - P_{t-1})$
+
+* Assessing performance characteristics
+** Annual returns
++ Annualising daily returns: multiply by the number of days in a year
+  - The number of business days in a year depends on the year and the market that you are trading
+  - Assume 256
+
+** DONE Risk and standard deviation
++ Meaningless to use outright returns.
+  - With leverage, returns can be doubled, so as risk.
+  - Better to use risk-adjusted return.
++ Should we use a symmetric or assymmetric measure of risk?
+  1.
